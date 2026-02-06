@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "sample-project",
+    "title": "Sample Redesign",
+    "short": "A UX redesign that improved onboarding conversion by 24%.",
+    "cover": "./assets/projects/sample-project/cover.svg",
+    "hero": "./assets/projects/sample-project/hero.svg",
+    "tags": ["UI","UX","Research"],
+    "role": "Lead Designer",
+    "tools": ["Figma","Miro"],
+    "date": "2025-01-15",
+    "caseStudy": "./projects/sample-project.html"
+  }
+]
