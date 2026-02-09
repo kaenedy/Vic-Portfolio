@@ -1249,12 +1249,16 @@ body.play-entrance .newsletter-section {
 
     /* Profile picture (larger circle with ring) */
     .profile-pic { width: 220px; height: 220px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.06); margin-bottom: 18px; box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+    .profile-pic-mobile { display: none; }
 
     @media (max-width: 900px) {
       .about-right { margin-left: 0; padding: 20px; }
       .hero-header h1 { font-size: 2.2rem; }
       .profile-pic { width: 140px; height: 140px; }
+      .profile-pic-mobile { display: block; margin: 0 auto 18px auto !important; width: 120px !important; height: 120px !important; }
+      .about-left .profile-pic { display: none; }
       .social-row { justify-content: center; }
+      .icon-pill { min-width: unset; max-width: unset; flex: unset; justify-content: unset; }
     }
 
     .about-right h1 {
@@ -1323,9 +1327,13 @@ body.play-entrance .newsletter-section {
       .portfolio-hero { grid-template-columns: 1fr 360px; }
       .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 900px) {
-      .portfolio-section { padding: 20px; }
-      .portfolio-hero { grid-template-columns: 1fr; }
+      .social-row { justify-content: center; }
+      .social-row .icon-pill { font-size: 0.85rem; padding: 6px 10px; }
+      .social-row .fa-icon { width: 15px; height: 15px; }
+      .section { padding: 12px 2vw !important; }
+      .social-row { flex-direction: unset; align-items: center; gap: 10px; }
+      .icon-pill { width: unset; min-width: unset; max-width: unset; justify-content: unset; }
+    }
       .portfolio-hero .hero-right { order: -1; }
       .portfolio-grid { grid-template-columns: repeat(1, 1fr); }
       .featured-work { flex-direction: column; }
@@ -1431,8 +1439,9 @@ body.play-entrance .newsletter-section {
     /* Responsive */
     @media (max-width: 900px) {
       .portfolio-section { padding: 20px; }
-      .portfolio-grid { grid-template-columns: repeat(1, 1fr); }
-
+      .social-row { flex-direction: unset; align-items: center; gap: 6px; }
+      .icon-pill { font-size: 0.78rem; padding: 5px 8px; }
+      .fa-icon { width: 13px; height: 13px; }
       .about {
         flex-direction: column;
         padding: 20px;
