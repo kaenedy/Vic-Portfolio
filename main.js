@@ -183,6 +183,35 @@ function triggerTextReveal() {
   });
 }
 
+function initQualityServicesAccordion() {
+  const accordion = document.querySelector('.quality-accordion');
+  if (!accordion) return;
+
+  const items = Array.from(accordion.querySelectorAll('.quality-item'));
+  const closeItem = (item) => {
+    const trigger = item.querySelector('.quality-trigger');
+    item.classList.remove('is-active');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  };
+
+  const openItem = (item) => {
+    const trigger = item.querySelector('.quality-trigger');
+    item.classList.add('is-active');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+  };
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('.quality-trigger');
+    if (!trigger) return;
+
+    trigger.onclick = () => {
+      const isActive = item.classList.contains('is-active');
+      items.forEach(closeItem);
+      if (!isActive) openItem(item);
+    };
+  });
+}
+
 // Rebind any content-specific JS (placeholder for future additions)
 function rebindContentBehaviors() {
   // Update navLinks reference in case DOM changed
@@ -220,6 +249,7 @@ function rebindContentBehaviors() {
 
   // Retrigger animated headings when new content is inserted
   if (typeof triggerTextReveal === 'function') triggerTextReveal();
+  initQualityServicesAccordion();
 
     // Bind sidebar toggle (if present in content)
     bindSidebarToggle();
@@ -329,4 +359,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Bind scroll-to-top for all .back-to-top links
   bindScrollToTop();
+  // Bind quality services accordion if section exists
+  initQualityServicesAccordion();
 });
