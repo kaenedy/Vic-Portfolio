@@ -1814,3 +1814,15 @@ a:focus, button:focus, input:focus, textarea:focus {
     transition: none !important;
   }
 }
+
+/* About page desktop-only social row spacing fix */
+@media (min-width: 901px) {
+  .about-right .social-row {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .about-right .icon-pill {
+    padding: 6px 10px;
+  }
+}
