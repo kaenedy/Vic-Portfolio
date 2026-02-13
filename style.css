@@ -1745,35 +1745,35 @@ a:focus, button:focus, input:focus, textarea:focus {
     transform: translateX(-50%);
     z-index: 1200;
 
-    width: min(92vw, 340px);
-    height: 62px;
-    padding: 7px 10px;
-    gap: 6px;
+    width: min(88vw, 300px);
+    height: 58px;
+    padding: 6px 8px;
+    gap: 8px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     border-radius: 999px;
-    border: 1px solid rgba(190, 214, 255, 0.3);
-    background: linear-gradient(180deg, rgba(17, 36, 88, 0.5), rgba(9, 18, 52, 0.46));
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 10px 22px rgba(2, 10, 34, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(180, 210, 255, 0.34);
+    background: linear-gradient(180deg, rgba(30, 52, 108, 0.48), rgba(16, 31, 76, 0.42));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 18px rgba(4, 11, 34, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.14);
   }
 
   #mobile-nav .nav-itm {
-    flex: 1 1 0;
-    min-width: 0;
-    height: 46px;
-    border-radius: 999px;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border-radius: 50%;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    color: rgba(196, 218, 255, 0.92);
+    color: rgba(178, 203, 255, 0.9);
     text-decoration: none;
     background: transparent;
-    transition: transform 160ms ease, color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+    transition: transform 160ms ease, color 160ms ease, background-color 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -1783,9 +1783,10 @@ a:focus, button:focus, input:focus, textarea:focus {
   }
 
   #mobile-nav .nav-itm.active {
-    color: #eef5ff;
-    background: linear-gradient(180deg, #5b95ff, #356ee6);
-    box-shadow: 0 8px 16px rgba(39, 95, 224, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    color: #f3f8ff;
+    background: linear-gradient(180deg, #58a1ff, #3d73e6);
+    border: 1px solid rgba(181, 216, 255, 0.45);
+    box-shadow: 0 7px 14px rgba(40, 98, 228, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   }
 
   #mobile-nav .nav-itm:active {
@@ -1795,16 +1796,16 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 @media (max-width: 320px) {
   #mobile-nav {
-    width: min(94vw, 304px);
-    height: 54px;
-    padding: 5px 7px;
-    gap: 4px;
-    box-shadow: 0 8px 14px rgba(2, 10, 34, 0.26);
+    width: min(94vw, 268px);
+    height: 50px;
+    padding: 4px 6px;
+    gap: 6px;
+    box-shadow: 0 6px 12px rgba(2, 10, 34, 0.24);
   }
 
-  #mobile-nav .nav-itm { height: 40px; }
+  #mobile-nav .nav-itm { width: 38px; height: 38px; flex-basis: 38px; }
   #mobile-nav .nav-itm i { font-size: 17px; }
-  #mobile-nav .nav-itm.active { box-shadow: 0 6px 12px rgba(39, 95, 224, 0.26); }
+  #mobile-nav .nav-itm.active { box-shadow: 0 5px 10px rgba(39, 95, 224, 0.24); }
 }
 
 @media (max-width: 900px) and (prefers-reduced-motion: reduce) {

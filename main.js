@@ -42,6 +42,41 @@ function updateActiveNav(url) {
   });
 }
 
+// Highlight active item in floating mobile nav based on current URL/pathname.
+// Supports both structures:
+// 1) <ul id="mobile-nav"><li><a ...></a></li></ul>
+// 2) <nav id="mobile-nav"><a ...></a></nav>
+function updateActiveMobileNav(url = window.location.href) {
+  const mobileNav = document.getElementById('mobile-nav');
+  if (!mobileNav) return;
+
+  let currentPath;
+  try {
+    currentPath = new URL(url, window.location.origin).pathname;
+  } catch (e) {
+    currentPath = window.location.pathname;
+  }
+
+  mobileNav.querySelectorAll('a[href]').forEach((a) => {
+    let linkPath;
+    try {
+      linkPath = new URL(a.getAttribute('href'), window.location.origin).pathname;
+    } catch (e) {
+      return;
+    }
+
+    const li = a.closest('li');
+    const isActive = linkPath === currentPath;
+
+    if (li) {
+      li.classList.toggle('active', isActive);
+      a.classList.toggle('active', isActive);
+    } else {
+      a.classList.toggle('active', isActive);
+    }
+  });
+}
+
 // Fetch and replace main content
 async function fetchAndReplace(url, addToHistory = true) {
   try {
@@ -70,6 +105,7 @@ async function fetchAndReplace(url, addToHistory = true) {
 
     // Update active nav
     updateActiveNav(url);
+    updateActiveMobileNav(url);
 
     // Close mobile menu if open
     closeMobileMenu();
@@ -275,6 +311,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Bind links
   bindLinkInterception();
+  // Sync active state for floating mobile nav on initial load
+  updateActiveMobileNav(window.location.href);
   // Bind sidebar toggle (if sidebar exists)
   bindSidebarToggle();
   // Ensure sidebar adjusts to avoid overlapping the footer
