@@ -1261,8 +1261,23 @@ body.play-entrance .newsletter-section {
       margin-bottom: 18px;
     }
 
-    .social-row { display: flex; gap: 10px; align-items: center; margin-bottom: 18px; }
-    .icon-pill { display: inline-flex; align-items:center; gap:8px; padding:8px 12px; background:var(--nav-pill-bg); border-radius:999px; color:var(--text-color); text-decoration:none; font-size:0.95rem; border:1px solid rgba(255,255,255,0.03); }
+    .social-row { 
+      display: flex; 
+      gap: 10px; 
+      align-items: center; 
+      margin-bottom: 18px; 
+    }
+    .icon-pill { display: inline-flex; 
+      align-items:center; 
+      gap:8px; 
+      padding:8px 12px; 
+      background:var(--nav-pill-bg); 
+      border-radius:999px; 
+      color:var(--text-color); 
+      text-decoration:none; 
+      font-size:0.95rem; 
+      border:1px solid rgba(255,255,255,0.03); 
+    }
     .fa-icon { width: 18px; height: 18px; display: inline-block; vertical-align: middle; filter: invert(1) brightness(2); }
     .icon-pill img { margin-right: 4px; }
     .location .fa-icon { width: 16px; height: 16px; margin-right: 10px; filter: invert(1) brightness(2); }
@@ -1812,17 +1827,5 @@ a:focus, button:focus, input:focus, textarea:focus {
   #mobile-nav,
   #mobile-nav .nav-itm {
     transition: none !important;
-  }
-}
-
-/* About page desktop-only social row spacing fix */
-@media (min-width: 901px) {
-  .about-right .social-row {
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  .about-right .icon-pill {
-    padding: 6px 10px;
   }
 }
