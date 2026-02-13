@@ -1370,13 +1370,12 @@ body.play-entrance .newsletter-section {
       .portfolio-hero { grid-template-columns: 1fr 360px; }
       .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
-    @media (max-width: 900px) {
       .social-row { justify-content: center; }
       .social-row .icon-pill { font-size: 0.85rem; padding: 6px 10px; }
       .social-row .fa-icon { width: 15px; height: 15px; }
       .section { padding: 12px 2vw !important; }
       .social-row { flex-direction: row; gap: 10px; }
+    }
       .portfolio-hero .hero-right { order: -1; }
       .portfolio-grid { grid-template-columns: repeat(1, 1fr); }
       .featured-work { flex-direction: column; }
@@ -1833,19 +1832,11 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 /* Home: premium hero + stats + services */
 .premium-main {
-  --violet: #a855f7;
-  --indigo: #5b21b6;
-  --panel: rgba(17, 15, 30, 0.82);
-  --line: rgba(177, 118, 255, 0.28);
-  --text-main: #f7f4ff;
-  --text-muted: #bab3ce;
   max-width: 1180px;
   margin: 42px auto 70px;
   padding: 56px 20px 36px;
   border: none;
-  /* border-radius: 28px; */
   color: var(--text-main);
-  /* box-shadow: 0 28px 80px rgba(5, 4, 16, 0.7); */
 }
 
 .premium-hero {
@@ -2031,7 +2022,7 @@ a:focus, button:focus, input:focus, textarea:focus {
   .premium-stats {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-  
+
   .premium-service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
